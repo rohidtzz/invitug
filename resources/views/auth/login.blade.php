@@ -78,7 +78,7 @@
 						</div>
 					</div>
 
-					<div class="text-center p-t-115">
+					{{-- <div class="text-center p-t-115">
 						<span class="txt1">
 							Don’t have an account?
 						</span>
@@ -86,7 +86,7 @@
 						<a class="txt2" href="{{ url('register') }}">
 							Sign Up
 						</a>
-					</div>
+					</div> --}}
 				</form>
 			</div>
 		</div>
