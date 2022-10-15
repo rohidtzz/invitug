@@ -72,36 +72,7 @@
                               <div id="map-container-google-1" class="z-depth-1-half map-container" >
                                 <iframe height="500px" width="100%" src="https://maps.google.com/maps?q=tritonfood%20corner&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
                               </div>
-									{{-- <form method="POST" id="contactForm" name="contactForm">
-										<div class="row">
-											<div class="col-md-6">
-												<div class="form-group">
-													<input type="text" class="form-control" name="name" id="name" placeholder="Name">
-												</div>
-											</div>
-											<div class="col-md-6">
-												<div class="form-group">
-													<input type="email" class="form-control" name="email" id="email" placeholder="Email">
-												</div>
-											</div>
-											<div class="col-md-12">
-												<div class="form-group">
-													<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
-												</div>
-											</div>
-											<div class="col-md-12">
-												<div class="form-group">
-													<textarea name="message" class="form-control" id="message" cols="30" rows="7" placeholder="Message"></textarea>
-												</div>
-											</div>
-											<div class="col-md-12">
-												<div class="form-group">
-													<input type="submit" value="Send Message" class="btn btn-primary">
-													<div class="submitting"></div>
-												</div>
-											</div>
-										</div>
-									</form> --}}
+
 								</div>
 							</div>
 							<div class="col-md-5 d-flex align-items-stretch">
@@ -131,14 +102,7 @@
 					            <p> 15.00 - selesai</p>
 					          </div>
 				          </div>
-				        	{{-- <div class="dbox w-100 d-flex align-items-center">
-				        		<div class="icon d-flex align-items-center justify-content-center">
-				        			<span class="fa fa-globe"></span>
-				        		</div>
-				        		<div class="text pl-3">
-					            <p><span>Website</span> <a href="#">yoursite.com</a></p>
-					          </div>
-				          </div> --}}
+
 			          </div>
 							</div>
 						</div>
@@ -370,7 +334,7 @@
         <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">
             <div class="icon-box">
               <div class="icon"><img src="{{ asset('landing/img/logo/UG_Makassar.png') }}" width="100%" alt=""></div>
-              <h4 class="title text-center"><a>Ultras Garuda Indonesia Sezione MAkassar</a></h4>
+              <h4 class="title text-center"><a>Ultras Garuda Indonesia Sezione Makassar</a></h4>
               <!-- <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p> -->
             </div>
         </div>
