@@ -118,7 +118,7 @@
         <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">
             <div class="icon-box">
               <div class="icon"><img src="{{ asset('landing/img/logo/'.$data->logo) }}" width="100%" alt=""></div>
-              <h4 class="title text-center"><a>Ultras Garuda Indonesia Sezione Bali</a></h4>
+              <h4 class="title text-center"><a>{{ $data->name }}</a></h4>
               <!-- <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p> -->
             </div>
         </div>
