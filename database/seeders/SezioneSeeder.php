@@ -267,6 +267,12 @@ class SezioneSeeder extends Seeder
             'slug' => 'medan',
         ]);
 
+        Sezione::create([
+            'logo' => 'UG_Squadra.png',
+            'name' => 'Ultras Garuda Indoensia Sezione Squadra',
+            'slug' => 'squadra',
+        ]);
+
 
 
 

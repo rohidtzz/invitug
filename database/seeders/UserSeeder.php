@@ -491,6 +491,17 @@ class UserSeeder extends Seeder
 
         ]);
 
+        User::Create([
+            'name' => 'Ultras Garuda Indonesia Sezione Squadra',
+            'username' => 'squadra',
+            'password' => bcrypt('squadra1945'),
+            'email' => '',
+            'no_hp' => '08667754123',
+            'status' => 'aktif',
+            'role' => 'sezione'
+
+        ]);
+
 
     }
 }
