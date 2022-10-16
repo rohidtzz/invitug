@@ -41,7 +41,7 @@
     <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
       <div class="row justify-content-center">
         <div class="col-xl-7 col-lg-9 text-center">
-          <h1>Undangan Aniversery 4th Ultras Garuda Sezione Tangerang</h1>
+          <h1>Undangan Anniversary 4th Ultras Garuda Sezione Tangerang</h1>
           <h3>Untuk {{ $data->name }}</h3><img width="100px" src="{{ asset('landing/img/logo/'.$data->logo) }}" alt="">
         </div>
       </div>
