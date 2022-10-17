@@ -11,7 +11,7 @@
             <div class="d-flex align-items-center">
               <h3 class="mb-0">Users Table</h3>
               <div class="justify-content-end ms-auto ">
-                @if (Auth()->user()->role =="admin" || Auth()->user()->role =="kordinator")
+                @if (Auth()->user()->role =="admin")
 
 
                 <form class="" action="{{ url('/home/users/search') }}" method="post">
@@ -41,13 +41,14 @@
                 <thead>
                   <tr>
                     <th class="text-uppercase text-center text-secondary text-xxs font-weight-bolder opacity-7">No</th>
-                    <th class="text-uppercase text-center text-secondary text-xxs font-weight-bolder opacity-7">Name</th>
-                    <th class="text-uppercase text-center text-secondary text-xxs font-weight-bolder opacity-7">Email</th>
+                    <th class="text-uppercase text-center text-secondary text-xxs font-weight-bolder opacity-7">Logo</th>
+                    <th class="text-uppercase text-center text-secondary text-xxs font-weight-bolder opacity-7">Nama</th>
                     <th class="text-uppercase text-center text-secondary text-xxs font-weight-bolder opacity-7">Username</th>
-                    <th class="text-uppercase text-center text-secondary text-xxs font-weight-bolder opacity-7">No hp</th>
-                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Role</th>
-                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Gender</th>
-                    <th class="text-uppercase text-center text-secondary text-xxs font-weight-bolder opacity-7">Action</th>
+                    <th class="text-uppercase text-center text-secondary text-xxs font-weight-bolder opacity-7">Email</th>
+                    <th class="text-uppercase text-center text-secondary text-xxs font-weight-bolder opacity-7">No Hp</th>
+                    <th class="text-uppercase text-center text-secondary text-xxs font-weight-bolder opacity-7">Status</th>
+                    <th class="text-uppercase text-center text-secondary text-xxs font-weight-bolder opacity-7">Role</th>
+                    <th class="text-uppercase text-center text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Action</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -65,9 +66,24 @@
 
 
                     </td>
+
+                    <td>
+                        <div class="d-flex flex-column  justify-content-center">
+                            <img width="90px" src="{{ asset('landing/img/logo/'.$a->logo) }}" alt="">
+
+                          </div>
+                    </td>
+
+
                     <td>
                         <div class="d-flex flex-column  justify-content-center">
                             <h6 class="mb-0 text-sm text-center">{{ $a->name }}</h6>
+
+                          </div>
+                    </td>
+                    <td>
+                        <div class="d-flex flex-column  justify-content-center">
+                            <h6 class="mb-0 text-sm text-center">{{ $a->username }}</h6>
 
                           </div>
                     </td>
@@ -83,9 +99,7 @@
                           </div>
                       </div>
                     </td>
-                    <td>
-                      <p class="text-xs font-weight-bold mb-0 text-center">{{ $a->username }}</p>
-                    </td>
+
 
                     <td class="align-middle text-center text-sm">
                       <span class="">
@@ -93,15 +107,10 @@
                       </span>
                     </td>
                     <td class="align-middle text-center text-sm">
-                        <span class="">{{ $a->role }}</span>
+                        <span class="">{{ $a->status }}</span>
                       </td>
-
-                      <td class="align-middle text-center text-sm">
-
-
-                        <span>
-                            {{ $a->gender }}
-                        </span>
+                    <td class="align-middle text-center text-sm">
+                        <span class="">{{ $a->role }}</span>
                       </td>
 
 
@@ -126,7 +135,7 @@
                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <form method="POST" action="{{ url('/home/users/edit/') }}" enctype="multipart/form-data">
+                                <form method="POST" action="{{ url('/home/users/update/') }}" enctype="multipart/form-data">
                                     @csrf
                                     <input type="hidden" name="id" value="{{ $al->id }}">
                                     <div class="mb-3">
@@ -144,53 +153,60 @@
                                         <input type="text" name="username" value="{{ $al->username }}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
                                         <div id="emailHelp" class="form-text"></div>
                                       </div>
-                                      <div class="mb-3">
+                                      {{-- <div class="mb-3">
                                         <label for="exampleInputEmail1" class="form-label">Password</label>
                                         <input type="text" name="password" value="" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                                         <div id="emailHelp" class="form-text"></div>
-                                      </div>
+                                      </div> --}}
                                       <div class="mb-3">
                                         <label for="exampleInputEmail1" class="form-label">No hp</label>
                                         <input type="number" name="no_hp" value="{{ $al->no_hp }}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
                                         <div id="emailHelp" class="form-text"></div>
                                       </div>
                                       <div class="mb-3">
-                                        <label for="exampleInputEmail1" class="form-label">Role</label>
-                                        <select name="role" class="form-control" data-toggle="select" title="Simple select" data-live-search="true" data-live-search-placeholder="Search ...">
-                                            @if ($al->role == 'admin')
-                                            <option value="admin" selected>Admin</option>
-                                            <option value="kordinator">Kordinator</option>
-                                            <option value="user">User</option>
-                                            @elseif ($al->role == 'kordinator')
-                                            <option value="admin" >Admin</option>
-                                            <option value="kordinator" selected>Kordinator</option>
-                                            <option value="user">User</option>
-                                            @elseif ($al->role == "user")
-                                            <option value="admin" >Admin</option>
-                                            <option value="kordinator" >Kordinator</option>
-                                            <option value="user" selected>User</option>
+                                        <label for="exampleInputEmail1" class="form-label">Status</label>
+                                        <select name="status" class="form-control" data-toggle="select" title="Simple select" data-live-search="true" data-live-search-placeholder="Search ...">
+                                            @if ($al->status == 'aktif')
+                                            <option value="aktif" selected>Aktif</option>
+                                            <option value="ikut">ikut</option>
+                                            <option value="tidakikut">tidak ikut</option>
+                                            <option value="nonaktif">nonaktif</option>
+                                            @elseif ($al->status == 'ikut')
+                                            <option value="aktif">Aktif</option>
+                                            <option value="ikut" selected>ikut</option>
+                                            <option value="tidakikut">tidak ikut</option>
+                                            <option value="nonaktif">nonaktif</option>
+                                            @elseif ($al->status == "tidakikut")
+                                            <option value="aktif">Aktif</option>
+                                            <option value="ikut">ikut</option>
+                                            <option value="tidakikut" selected>tidak ikut</option>
+                                            <option value="nonaktif">nonaktif</option>
+                                            @elseif ($al->status == "nonaktif")
+                                            <option value="aktif" >Aktif</option>
+                                            <option value="ikut">ikut</option>
+                                            <option value="tidakikut">tidak ikut</option>
+                                            <option value="nonaktif" selected>nonaktif</option>
                                             @else
-                                            <option value="admin" >Admin</option>
-                                            <option value="kordinator" >Kordinator</option>
-                                            <option value="user" selected>User</option>
                                             @endif
                                         </select>
                                         <div id="emailHelp" class="form-text"></div>
                                       </div>
+
                                       <div class="mb-3">
-                                        <label for="exampleInputEmail1" class="form-label">Gender</label>
-                                        <select name="gender" class="form-control" data-toggle="select" title="Simple select" data-live-search="true" data-live-search-placeholder="Search ...">
-                                            @if ($al->gender == 'pria')
-                                            <option value="pria" selected>Pria</option>
-                                            <option value="wanita">wanita</option>
+                                        <label for="exampleInputEmail1" class="form-label">Role</label>
+                                        <select name="role" class="form-control" data-toggle="select" title="Simple select" data-live-search="true" data-live-search-placeholder="Search ...">
+                                            @if ($al->role == 'admin')
+                                            <option value="admin" selected>Admin</option>
+                                            <option value="sezione">Sezione</option>
+                                            @elseif ($al->role == 'sezione')
+                                            <option value="admin">Admin</option>
+                                            <option value="sezione" selected>Sezione</option>
                                             @else
-                                            <option value="pria" >Pria</option>
-                                            <option value="wanita" selected>wanita</option>
                                             @endif
-
-
                                         </select>
+                                        <div id="emailHelp" class="form-text"></div>
                                       </div>
+
                             </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

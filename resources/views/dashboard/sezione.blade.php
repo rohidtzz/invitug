@@ -121,6 +121,47 @@
                                       </div>
 
                                       <div class="mb-3">
+                                        <label for="exampleInputEmail1" class="form-label">Username</label>
+                                        <input type="text" name="username" value="{{ $al->username }}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                                        <div id="emailHelp" class="form-text"></div>
+                                      </div>
+
+                                      <div class="mb-3">
+                                        <label for="exampleInputEmail1" class="form-label">Email</label>
+                                        <input type="text" name="email" value="{{ $al->email }}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                                        <div id="emailHelp" class="form-text"></div>
+                                      </div>
+
+                                      <div class="mb-3">
+                                        <label for="exampleInputEmail1" class="form-label">Status</label>
+                                        <select name="status" class="form-control" data-toggle="select" title="Simple select" data-live-search="true" data-live-search-placeholder="Search ...">
+                                            @if ($al->status == 'aktif')
+                                            <option value="aktif" selected>Aktif</option>
+                                            <option value="ikut">ikut</option>
+                                            <option value="tidakikut">tidak ikut</option>
+                                            <option value="nonaktif">nonaktif</option>
+                                            @elseif ($al->status == 'ikut')
+                                            <option value="aktif">Aktif</option>
+                                            <option value="ikut" selected>ikut</option>
+                                            <option value="tidakikut">tidak ikut</option>
+                                            <option value="nonaktif">nonaktif</option>
+                                            @elseif ($al->status == "tidakikut")
+                                            <option value="aktif">Aktif</option>
+                                            <option value="ikut">ikut</option>
+                                            <option value="tidakikut" selected>tidak ikut</option>
+                                            <option value="nonaktif">nonaktif</option>
+                                            @elseif ($al->status == "nonaktif")
+                                            <option value="aktif" >Aktif</option>
+                                            <option value="ikut">ikut</option>
+                                            <option value="tidakikut">tidak ikut</option>
+                                            <option value="nonaktif" selected>nonaktif</option>
+                                            @else
+                                            @endif
+                                        </select>
+                                        <div id="emailHelp" class="form-text"></div>
+                                      </div>
+
+                                      <div class="mb-3">
                                           <label for="exampleInputEmail1" class="form-label">No Hp</label>
                                           <input type="number" name="no_hp" value="{{ $al->no_hp }}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
                                           <div id="emailHelp" class="form-text"></div>

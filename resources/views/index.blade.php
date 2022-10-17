@@ -11,7 +11,7 @@
 
   <!-- Favicons -->
   {{-- <link href="assets/img/favicon.png" rel="icon"> --}}
-  <link rel="icon" type="image/png" href="{{ asset('ico/ico.ico') }}"/>
+  <link rel="icon" type="image/png" href="{{ asset('ico/tgr.ico') }}"/>
   <link rel="stylesheet" href="{{ asset('landing/assets/img/apple-touch-icon.png" rel="apple-touch-icon') }}">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">

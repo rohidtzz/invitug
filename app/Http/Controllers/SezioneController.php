@@ -14,7 +14,10 @@ class SezioneController extends Controller
 
         User::where('id',$request->id)->update([
             'name' => $request->name,
-            'no_hp' => $request->no_hp
+            'no_hp' => $request->no_hp,
+            'username' => $request->username,
+            'email' => $request->email,
+            'status' => $request->status
         ]);
 
 

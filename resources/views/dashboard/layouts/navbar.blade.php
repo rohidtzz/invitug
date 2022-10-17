@@ -9,6 +9,11 @@
 
                 {{Request::is('home') ? 'Dashboard' : ''}}
                 {{Request::is('home/member') ? 'Member' : ''}}
+                {{Request::is('home/sezione') ? 'Sezione' : ''}}
+                {{Request::is('home/pages') ? 'Pages' : ''}}
+                {{Request::is('home/profile') ? 'Profile' : ''}}
+                {{Request::is('home/users') ? 'Users' : ''}}
+                {{Request::is('home/users/search') ? 'Users' : ''}}
 
 
 
@@ -19,6 +24,12 @@
 
             {{Request::is('home') ? 'Dashboard' : ''}}
             {{Request::is('home/member') ? 'Member' : ''}}
+            {{Request::is('home/sezione') ? 'Sezione' : ''}}
+            {{Request::is('home/pages') ? 'Pages' : ''}}
+            {{Request::is('home/search') ? 'Search' : ''}}
+            {{Request::is('home/profile') ? 'Profile' : ''}}
+            {{Request::is('home/users') ? 'Users' : ''}}
+            {{Request::is('home/users/search') ? 'Search' : ''}}
 
 
 

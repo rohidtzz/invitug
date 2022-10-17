@@ -54,7 +54,7 @@ class MemberController extends Controller
 
         Member::where('id',$request->id)->update([
             'name' => $request->name,
-            'no_hp' => $request->no_hp
+            'no_hp' => $request->no_hp,
         ]);
 
 

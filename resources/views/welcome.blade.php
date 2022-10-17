@@ -11,7 +11,7 @@
 
   <!-- Favicons -->
   {{-- <link href="assets/img/favicon.png" rel="icon"> --}}
-  <link rel="icon" type="image/png" href="{{ asset('ico/ico.ico') }}"/>
+  <link rel="icon" type="image/png" href="{{ asset('ico/tgr.ico') }}"/>
   <link rel="stylesheet" href="{{ asset('landing/assets/img/apple-touch-icon.png" rel="apple-touch-icon') }}">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
@@ -114,16 +114,22 @@
 
     <h2 class="text-center">Kita Kuat JIka Kita Bersama</h2>
 
-      <div class="row icon-boxes">
-        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">
-          <div class="icon-box">
-            <div class="icon"><img src="{{ asset('landing/img/logo/LOGO_UGI.png') }}" width="100%" alt=""></div>
-            <h4 class="title text-center"><a aria-disabled="true">ultras Garuda Indonesia</a></h4>
-            <!-- <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p> -->
-          </div>
-        </div>
 
-        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">
+
+
+      <div class="row icon-boxes">
+
+        @foreach ($data as $datas)
+
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box">
+                <div class="icon"><img src="{{ asset('landing/img/logo/'.$datas->logo) }}" width="100%" alt=""></div>
+                <h4 class="title text-center"><a aria-disabled="true">{{ $datas->name }}</a></h4>
+                <!-- <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p> -->
+            </div>
+            </div>
+        @endforeach
+        {{-- <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">
             <div class="icon-box">
               <div class="icon"><img src="{{ asset('landing/img/tgr.png') }}" width="100%" alt=""></div>
               <h4 class="title text-center"><a>Ultras Garuda Indonesia Sezione Tangerang</a></h4>
@@ -457,7 +463,7 @@
               <h4 class="title text-center"><a>Ultras Garuda Indonesia Sezione Medan</a></h4>
               <!-- <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p> -->
             </div>
-        </div>
+        </div> --}}
 
 
 
